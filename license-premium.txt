@@ -9,16 +9,9 @@ A Creative Resume/CV Template for Professionals built with Bootstrap 4 by Templa
 Live Demo - https://templateflip.com/demo/?template=creative-cv
 Download - https://templateflip.com/templates/creative-cv/
 
-
 License Terms
 
-Licensed under the Creative Commons Attribution 3.0 license.
-You can use this template for free in both personal as well as commercial projects.
-In return you need to keep the credit to https://templateflip.com from the site footer.
-
-You can buy a premium license to be allowed to remove the footer link.
-https://templateflip.com/templates/creative-cv/
-
+You can use this template in both personal as well as commercial projects.
 
 Prohibitions
 
