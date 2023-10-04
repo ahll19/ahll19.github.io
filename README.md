@@ -10,3 +10,4 @@ It is what it says on the tin.
 - [x] Create a basic working website using Jekyll
 - [ ] Set up custom domain
 - [ ] Add download link to CV in menu
+- [ ] Make sure that the beginning of the article is not the a section table
