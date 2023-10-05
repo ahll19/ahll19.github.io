@@ -11,4 +11,3 @@ It is what it says on the tin.
 - [x] Set up custom domain
   - [x] Make sure that images and such are served through https instead of http
 - [ ] Add download link to CV in menu
-- [ ] Make sure that the beginning of the article is not a section table
