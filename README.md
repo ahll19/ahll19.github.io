@@ -8,6 +8,7 @@ It is what it says on the tin.
   - Perhaps some information on how to create a similar site yourself
 - [x] Add a license
 - [x] Create a basic working website using Jekyll
-- [ ] Set up custom domain
+- [x] Set up custom domain
+  - [ ] Make sure that images and such are served through https instead of http
 - [ ] Add download link to CV in menu
-- [ ] Make sure that the beginning of the article is not the a section table
+- [ ] Make sure that the beginning of the article is not a section table
