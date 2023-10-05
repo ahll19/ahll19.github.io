@@ -9,6 +9,6 @@ It is what it says on the tin.
 - [x] Add a license
 - [x] Create a basic working website using Jekyll
 - [x] Set up custom domain
-  - [ ] Make sure that images and such are served through https instead of http
+  - [x] Make sure that images and such are served through https instead of http
 - [ ] Add download link to CV in menu
 - [ ] Make sure that the beginning of the article is not a section table
