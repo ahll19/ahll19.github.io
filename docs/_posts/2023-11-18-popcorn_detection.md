@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Detecting Microwave Popcorn Pops"
+title: '"When are my popcorn done?" - part 1'
 author: "Anders Lauridsen"
 categories: journal
 tags: [signalprocessing, audio, python, popcorndetection]
@@ -19,6 +19,7 @@ The code I wrote for this blog post, and the current state of the project, can b
 ---
 - [1. Exploration](#1-exploration)
 - [2. My Naive Algorithm](#2-my-naive-algorithm)
+  - [2.1 Does the algorithm detect popcorn?](#21-does-the-algorithm-detect-popcorn)
 
 ---
 
@@ -79,4 +80,24 @@ While this algorithm might seem ingenious and perfect, it does have some flaws t
 3. It might be slightly ineffective to carry out this many sums of squares calculations each second.
 4. The algorithm doesn't allow for multiple pops to occur within a time-span of 0.1 seconds.
 
-Hence, the title of this section. But no matter, 
+Do note that a plus of this algorithm is that we do not need to filter the signal, since we only consider the frequency range where we have assumed that no microwave noise is negligible. 
+
+Hence, the title of this section. But no matter, let's see how this algorithm performs after tweaking the $\lambda_0$ parameter.
+
+## 2.1 Does the algorithm detect popcorn?
+By seeing what values $\lambda$ had for times when no popcorn were popping it seemed that $\lambda_0=4\cdot10^{-5}$ was a good value. This would remove most of the false positives induced by the noise in the signal, while still allowing relatively silent pops to be caught by the algorithm. I also cut the first 62 seconds of the signal for this test, since this is when the popcorn started popping.
+
+Looking at the figure below, we see a wide angle view of when the individual pops where detected. By looking at the amount of red dots centered around the more busy parts of the signals, this seems to be a decent algorithm. 
+
+![Wide view of popcorn detections](../assets/img/posts/2023-11-18/detected_popcorn_wide_test_1.png)
+
+It is however not easy to make out individual pops this way, so I zoomed in on a part of the signal which highlights that this algorithm seems to work fine under the conditions of this test.
+
+![Narrow view of popcorn detections](../assets/img/posts/2023-11-18/detected_popcorn_narrow_test_1.png)
+
+Looking at the figure above we see that the algorithm actually gets decent performance on this part of the signal. Scanning across the waveform it looks like the algorithm catches most of the pops which occur. And looking at the resulting time between pops, it does look promising.
+
+![Time between pops, not smoothed](../assets/img/posts/2023-11-18/time_between_pops_test_1.png)
+![Time between pops, smoothed](../assets/img/posts/2023-11-18/time_between_pops_smoothed_test_1.png)
+
+Seeing that taking a moving average with a window-size of 5 creates results that look like the one above, one might be tempted to slap this algorithm onto an Arduino Uno and wire it up to a microwave, and create a Kickstarter with a silly name. But this is a blog of science, so I did actually do more than one test on this algorithm.
