@@ -3,6 +3,6 @@
 
 .vscode/
 
-docs/Gemfile
+.jekyll-cache/
 
 docs/Gemfile.lock
