@@ -14,6 +14,7 @@ Over the years since I have bought more lights, some Google smart speakers, and 
 This blog-post details my first dive into self-hosting my smarthome, and my hope is that it will be one of many posts talking about setting up cool features, only really allowed by self-hosting. In this post I will talk about how I set up conditional reminders, and turned my VERY old speaker system into a "smart" speaker system by using the Spotify connect protocol.
 
 **Table of Contents**
+
 ---
 - [1. Hardware](#1-hardware)
   - [Raspberry Pi 5](#raspberry-pi-5)
@@ -21,9 +22,9 @@ This blog-post details my first dive into self-hosting my smarthome, and my hope
   - [Google Nest Mini](#google-nest-mini)
   - [Old Speaker System](#old-speaker-system)
 - [2. Software](#2-software)
-  - [Docker \& Home Assistant](#docker--home-assistant)
+  - [Docker and Home Assistant](#docker-and-home-assistant)
   - [Raspotify](#raspotify)
-- [3. Postmortem \& Future Work](#3-postmortem--future-work)
+- [3. Conclusion](#3-conclusion)
 
 ---
 
@@ -47,14 +48,14 @@ I have two of these small smart speakers, one of them I bought second hand, and 
 I only really use it for conversions between imperial and real units when cooking, or perhaps setting alarms (which could just as well be done from my phone).
 
 ## Old Speaker System
-*Figure out how old these speakers are at some point*
+I don't know which speakers I have right now, or which amp they are connected to. I do have plans for maybe opening up the amp to make it turn on when I connect to the Raspberry Pi. If I ever do that I will of course write down some details on what I'm using.
 
 These old speakers really do sound great when a device is hooked up to the amplifier via Aux. I personally got them from a family member who did not have the space for them anymore, but similar speakers can be had on Facebook Marketplace for cheap.
 
 # 2. Software
 The software deployed so far has been rather plug and play, with only some slight configuration needing to be done. How my software is set up as of now will most likely change, maybe I will add [Google Cast](https://developers.google.com/cast/docs/overview), maybe not.
 
-## Docker & Home Assistant
+## Docker and Home Assistant
 Docker is being used to host the [Home Assistant](https://hub.docker.com/r/homeassistant/home-assistant/), since native support for the Raspberry Pi 5 was added [a few months](https://www.home-assistant.io/blog/2024/02/26/home-assistant-os-12-support-for-raspberry-pi-5/) after I set up my system...
 
 Using Docker is not the worst thing every, since it does make porting easier, though I would like to experiment with installing it on the Pi directly, once I have another micro PC as the Pi Zero 2 W running Raspotify on the speaker system.
@@ -104,8 +105,9 @@ I didn't write my steps down, and this is not a detailed guide, so I won't provi
 
 I also used the `alsamixer`{:#id}{:.class} CLI tool to turn up the volume on the Pi, in hopes that I would be able to go over a larger volume range once connected over Spotify. I don't know how this is handled by Raspotify, and therefore I don't know if it is worth replicating. But it is there as a troubleshooting step.
 
-# 3. Postmortem & Future Work
+# 3. Conclusion
 Running Home Assistant in Docker on a machine that is also connected to my old speaker setup over AUX seems like a "proof of concept" state of my smarthome. Given this I would like to invest in some more hardware, such as a Z-wave USB controller, and some Z-wave devices which aren't just smart lights, such as blinds or electricity meters.
 
 I am pretty happy with what my smarthome is so far. I am able to play music on my nice speaker system, without hassle, or spending a fortune on new smart speakers. I am also a fan of being able to create automations without relying on [Google keeping functionality available for many years](https://killedbygoogle.com/), since it would be a shame if they killed off Google Home after I spend several hours setting up automations in that framework.
 
+I am looking forward to adding more devices to my ecosystem, and playing around with Home Assistant some more.
