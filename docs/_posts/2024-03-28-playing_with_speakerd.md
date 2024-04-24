@@ -30,7 +30,7 @@ On the [GitHub Page](https://github.com/badaix/snapcast) of Snapcast they say th
 
 >Snapcast is a multiroom client-server audio player, where all clients are time synchronized with the server to play perfectly synced audio. It's not a standalone player, but an extension that turns your existing audio player into a Sonos-like multiroom solution.
 
-*something something fitting my needs*
+This is more or less exactly what I want in an audio setup. However, setting this up is not trivial. Thankfully, Norwegian software architect Andreas Skoglund wrote a great [blog post](https://whynot.guide/posts/howtos/multiroom-media/) which I am following in order to create my setup.
 
 ### First Setup
 Since Snapcast is distributed to Debian based systems, I could just download and install the packages from the [release page](https://github.com/badaix/snapcast/releases).
@@ -40,3 +40,29 @@ After installing the correct packages I went and tested the setup. I have my Pi 
 The files `/dev/random` and `/dev/urandom` provide an interface to the random number generator in the Linux kernel, the difference between them being that the form the former will block reading if the system is not able to generate "random enough" numbers, and the latter will never be blocked. This is lifted from [this post](https://linuxhandbook.com/dev-random-urandom/) from the Linux Handbook.
 
 When I first did this I ran into permission issues, since Snapcast creates a user and group for that user called `snapserver`, on the server. I had to change the ownership of the file using `chown` in order to test this in my case, but switched the owner back after testing.
+
+### Daemonizing Snapserver
+When I was first messing around with Snapcast I accidentally set some configuration options in one of the configuration files for `snapserver`. This led to me wasting a good hour before figuring out why I could not start the server as a service. <br>
+With `/etc/default/snapserver` file on my Pi 5 which looks like this
+```
+# Start the server, used only by the init.d script
+START_SNAPSERVER=true
+
+# Additional command line options that will be passed to snapserver
+# note that user/group should be configured in the init.d script or the systemd unit file
+# For a list of available options, invoke "snapserver --help"
+SNAPSERVER_OPTS=""
+```
+I was able to enable and start the server using `systemctl` as you would any other daemon.
+
+To test this I downloaded a `.wav` file using wget, and added the following option under the `[stream]` tag in `/etc/snapserver.conf` on the Pi 5.
+````
+...
+[stream]
+stream = file:///opt/a2002011001-e02.wav?name=test
+...
+```
+This allows me to go the the local ip of the Pi 5 on port 1780 in a browser, and see a web interface for Snapcast, with the clients listed on that site:
+![Snapcast Webview from my Windows Desktop](../assets/img/posts/2024-03-28/snapcast webview.png)
+
+**Note:** *I never actually enabled the client service on the Pi 3A+, but it seems that it is enabled, and works as it should. I did not have to set it up any further than that. I also do not remember how I pointed the client to the server's IP, but if it works it works.*
