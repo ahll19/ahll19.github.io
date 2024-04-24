@@ -4,7 +4,7 @@ disqus:
   disqus_shortname: 'anders-lauridsen-dk'
 
 # If you are not using Google Analytics, please change 'google-ID' to an empty string
-google-ID: ''
+google-ID: 'G-G9TYB99Z7M'
 
 menu:
 - {name: 'About Me',   url: 'about.html'}
