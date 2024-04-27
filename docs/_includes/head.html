@@ -1,9 +1,11 @@
 <head>
+  <!-- Google Analytics -->
+  {% include google-analytics.html %}
   <title>
     {% if page.title == "Home" %}
-      {{ site.title }} | {{ site.description }}
+    {{ site.title }} | {{ site.description }}
     {% else %}
-      {{ page.title }} | {{ site.title }}
+    {{ page.title }} | {{ site.title }}
     {% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,14 +23,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-    MathJax.Hub.Config({
+      MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [['$', '$'], ['\\(', '\\)']]
         }
       });
-  </script>
-  <!-- Google Analytics -->
-  {% include google-analytics.html %}
+    </script>
   <!-- Use Jekyll SEO plugin -->
   {% seo %}
 </head>
