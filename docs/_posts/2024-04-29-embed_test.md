@@ -11,3 +11,6 @@ tags: []
 
 # Generic websites (mostly) work with the /?embedded=true in the tag
 <iframe src="https://jako4295.github.io/?embedded=true" width="100%" height="600"></iframe>
+
+# Note
+streamlit python for hosting stuff
