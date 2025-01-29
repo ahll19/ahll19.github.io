@@ -11,3 +11,5 @@ It is what it says on the tin.
 - [x] Set up custom domain
   - [x] Make sure that images and such are served through https instead of http
 - [ ] Update tags on my posts, and find a way of keeping track of tags
+  - [ ] Create a git hook which reads all tags and throws them into a list in a txt when pulling or something
+- [ ] Clean up Docker scripts
