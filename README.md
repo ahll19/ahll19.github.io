@@ -2,9 +2,7 @@
 It is what it says on the tin.
 
 ## Cool stuff (Must have)
-- [line numbering](https://github.com/getpelican/pelican-plugins/tree/master/better_codeblock_line_numbering)
-- [embedded youtube](https://github.com/kura/pelican_youtube)
-- [photos](https://github.com/pelican-plugins/photos)
+- [photos](https://github.com/pelican-plugins/**photos**)
 - [readtime](https://github.com/getpelican/pelican-plugins/tree/master/readtime)
 - [Series of articles](https://github.com/pelican-plugins/series)
 - [Share links](https://github.com/pelican-plugins/share-post)
@@ -17,7 +15,12 @@ It is what it says on the tin.
 - [Compress images, if needed](https://github.com/getpelican/pelican-plugins/tree/master/optimize_images)
 - [sticky](https://github.com/Shaked/pin_to_top)
 
-## To Do
+## New ToDo
+- [ ] Not lower case in sidebar, keep uppercase.
+- [ ] Spacing between pages, socials, links
+- [ ] photo gallery of some sort
+
+## Old ToDo
 - [ ] Update tags on my posts, and find a way of keeping track of tags
   - [ ] Create a git hook which reads all tags and throws them into a list in a txt when pulling or something
 - [ ] Clean up Docker scripts

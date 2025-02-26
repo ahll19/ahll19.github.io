@@ -11,3 +11,7 @@ def fun(int x) -> float:
     print(x)
     return 0.2
 ```
+
+$$ a^n+b^n=c^n $$
+
+[link to test post 1]({filename}test-post.md)

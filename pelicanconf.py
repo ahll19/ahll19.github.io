@@ -21,17 +21,12 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-    ("Pelican", "https://getpelican.com/"),
-    ("Python.org", "https://www.python.org/"),
-    ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("You can modify those links in your config file", "#"),
-)
-
-# Social widget
-SOCIAL = (
     ("Instagram", "https://www.instagram.com/anderslauridsen98/"),
     ("LinkedIn", "https://www.linkedin.com/in/anders-hl-lauridsen/"),
 )
+
+# Social widget
+SOCIAL = ()
 
 DEFAULT_PAGINATION = False
 
@@ -52,10 +47,13 @@ SITELOGO = "images/profile.JPG"
 SITEDESCRIPTION = "Blogging and Image Gallery"
 COPYRIGHT_NAME = "Anders Lauridsen"
 COPYRIGHT_YEAR = f"{datetime.now().year}"
-PAGES_SORT_ATTRIBUTE = True
 MAIN_MENU = True
 MENUITEMS = [
-    ("Home", "https://anders-lauridsen.dk"),
     ("Blog", "https://anders-lauridsen.dk"),
 ]
-PYGMENTS_STYLE = "vs"
+PAGES_SORT_ATTRIBUTE = True
+ARTICLE_ORDER_BY = "reversed-date"
+THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
+
+# Plugin
+PLUGINS = []
