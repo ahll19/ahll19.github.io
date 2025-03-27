@@ -3,7 +3,7 @@ layout: post
 title: 'Creating a Landing Page and why LLMs Wont Take Our Jobs Any Time Soon'
 author: "Anders Lauridsen"
 categories: journal
-tags: []
+tags: [ai, website, javascript, react, nextjs]
 image: posts/2025-03-27/landing_page.png
 ---
 
