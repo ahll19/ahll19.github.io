@@ -14,6 +14,9 @@ some intro
     - [Installation on TrueNAS](#installation-on-truenas)
     - [Migration](#migration)
     - [Troubleshooting](#troubleshooting)
+  - [Tandoor](#tandoor)
+    - [Finding an alternative and easy install](#finding-an-alternative-and-easy-install)
+    - [Easy migration, and PWA instaed of 3rd party app](#easy-migration-and-pwa-instaed-of-3rd-party-app)
 
 # Why Migrate
 I described my old server setup briefly in [this](creating-a-landing-page-and-why-llms-wont-take-our-jobs) post but here's a brief excerpt from that post:
@@ -66,3 +69,13 @@ My first troubleshooting step was to check that the container could actually see
 ![output from lsusb](../assets/img/posts/2025-04-13/lsusb.png)
 
 After digging around in the terminal for a while I went back into the Home Assistant config, and found the "device" section of the config page. It turns out that I needed to map my device to the container, in order for it to use it. This was something I had not considered since `lsusb` showed the device from a shell in the container.
+
+## Tandoor
+
+Old installation (docker compose). Cannot install on truenas base
+
+### Finding an alternative and easy install
+
+### Easy migration, and PWA instaed of 3rd party app
+
+Maybe make a note about PWA, Apple and EU
