@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Migrating Nextcloud, Home Assistant, and Tandoor'
+title: 'Migrating Services from my old Server to the new one'
 author: "Anders Lauridsen"
 categories: journal
 tags: []
@@ -17,6 +17,8 @@ some intro
   - [Tandoor](#tandoor)
     - [Finding an alternative and easy install](#finding-an-alternative-and-easy-install)
     - [Easy migration, and PWA instaed of 3rd party app](#easy-migration-and-pwa-instaed-of-3rd-party-app)
+  - [Nextcloud](#nextcloud)
+  - [Setting Nextcloud up on TrueNAS](#setting-nextcloud-up-on-truenas)
 
 # Why Migrate
 I described my old server setup briefly in [this](creating-a-landing-page-and-why-llms-wont-take-our-jobs) post but here's a brief excerpt from that post:
@@ -79,3 +81,12 @@ Old installation (docker compose). Cannot install on truenas base
 ### Easy migration, and PWA instaed of 3rd party app
 
 Maybe make a note about PWA, Apple and EU
+
+## Nextcloud
+...
+
+I haven't migrated Nextcloud yet (continue)
+
+## Setting Nextcloud up on TrueNAS
+
+link to blogpost and office stuff
