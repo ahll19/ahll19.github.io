@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Migrating Services from my old Server to the new one'
+title: 'Migrating Services from my old to my new Server'
 author: "Anders Lauridsen"
 categories: journal
 tags: []
@@ -15,7 +15,6 @@ some intro
     - [Migration](#migration)
     - [Troubleshooting](#troubleshooting)
   - [Tandoor](#tandoor)
-    - [Finding an alternative and easy install](#finding-an-alternative-and-easy-install)
     - [Easy migration, and PWA instaed of 3rd party app](#easy-migration-and-pwa-instaed-of-3rd-party-app)
   - [Nextcloud](#nextcloud)
   - [Setting Nextcloud up on TrueNAS](#setting-nextcloud-up-on-truenas)
@@ -78,19 +77,39 @@ After digging around in the terminal for a while I went back into the Home Assis
 
 ## Tandoor
 
-Old installation (docker compose). Cannot install on truenas base
+I had installed Tandoor using Docker Compose on the old server.
+The old compose file can be seen below.
 
-### Finding an alternative and easy install
+**INSERT COMPOSE FILE FROM SERVER**
+
+TrueNAS doesn't directly support Tandoor,
+and for now I don't want to install community supported apps.
+
+Researching self-hosted recipe software can bewildering,
+but I ended up using **INSERT LINK** Mealie instead.
 
 ### Easy migration, and PWA instaed of 3rd party app
 
-Maybe make a note about PWA, Apple and EU
+Migrating from Tandoor to Mealie is rather easy and intuitive,
+and installing the PWA is just as easy.
+
+**INSERT NOTE ABOUT PWA EU AND APPLE**
 
 ## Nextcloud
 ...
 
-I haven't migrated Nextcloud yet (continue)
+I haven't migrated Nextcloud yet.
+The old installation was done through Snap (because I didn't know better)
+and uses MySQL (**VERIFY**) under the hood. The new installation has to be done
+int PostgreSQL, because that's what Nextcloud on TrueNAS supports.
+While I can make a DB dump in the old installation, 
+and try to convert it to something which works with PostgreSQL,
+I don't want to.
+
+I might end up having my users download their content and reupload it to the new instance,
+but that won't carry over the shares, which is a big minus.
+The migration of Nextcloud is a can I will kick way further down the road.
 
 ## Setting Nextcloud up on TrueNAS
 
-I did set up Nextcloud on my new server
+I did set up Nextcloud on my new server **BLOG POST**
