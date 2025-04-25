@@ -25,6 +25,10 @@ I described my old server setup briefly in [this](creating-a-landing-page-and-wh
 
 >My dad had an old Acer Aspire XC-886 desktop lying around with a 9th-gen i3 CPU, which I ended up using for the server. I bought two 1TB SSDs and installed Ubuntu Server 22.04 on the desktop. I used [mdadm](https://linux.die.net/man/8/mdadm) to create a RAID 1 array over the two SSDs for redundancy. <br> <br> I installed [Nextcloud](https://nextcloud.com/) to back up all of the videos and photos from the hard drive. I chose Nextcloud because it did what I needed (and more), seemed easy to install, and offered Office-like capabilities I thought I might use later. Eventually, I bought a domain, got a static IP from my ISP, and made the service available to my family. <br> <br>As time went on, I wanted to run more software on the Acer server. I tried running [Pi-hole](https://pi-hole.net/) (but DNS is a pain, so I ditched that) and ended up running [Home Assistant](https://www.home-assistant.io/) instead. [This](smarthome_saga_part_1) is my latest post on that journey at the time of writing. <br> <br> So that was my setup before building the new server: an old Acer desktop running Home Assistant and Nextcloud, with ports forwarded for remote access.
 
+I wanted to have everything "under one roof", more or less. While I am ok running extra infrastructure, such as a proxy manager or geofencing, on other hardware, I wanted all of my services running on one server, preferably using the same technology (namely Docker in the form of TrueNAS Apps). This would, in theory, make backups easier, and general system administration.
+
+I had 3 services running on my old server: Home Assistant, Tandoor, and Nextcloud. I will be covering each migration in increasing difficulty.
+
 ## Home Assistant
 
 My old Home Assistant setup consisted of a Docker Compose file along with a mounted volume in `/opt/homeassistant/`. a setup copied from a blog I unfortunately don't remember the name of. 
@@ -89,4 +93,4 @@ I haven't migrated Nextcloud yet (continue)
 
 ## Setting Nextcloud up on TrueNAS
 
-link to blogpost and office stuff
+I did set up Nextcloud on my new server
