@@ -3,7 +3,7 @@ layout: post
 title: 'Migrating Services from my old to my new Server'
 author: "Anders Lauridsen"
 categories: journal
-tags: []
+tags: [home server, nextcloud, tandoor mealie, migration, truenas]
 image: posts/2025-04-13/migration-3020862114.jpg
 ---
 
@@ -15,9 +15,8 @@ some intro
     - [Migration](#migration)
     - [Troubleshooting](#troubleshooting)
   - [Tandoor](#tandoor)
-    - [Easy migration, and PWA instaed of 3rd party app](#easy-migration-and-pwa-instaed-of-3rd-party-app)
+    - [Easy migration, and PWA instead of 3rd party app](#easy-migration-and-pwa-instead-of-3rd-party-app)
   - [Nextcloud](#nextcloud)
-  - [Setting Nextcloud up on TrueNAS](#setting-nextcloud-up-on-truenas)
 
 # Why Migrate
 I described my old server setup briefly in [this](creating-a-landing-page-and-why-llms-wont-take-our-jobs) post but here's a brief excerpt from that post:
@@ -52,7 +51,7 @@ services:
 
 This install has been relatively unproblematic, and when I plugged in my Zigbee dongle it 'just worked'. I specifically used the *ZBDongle-E* model from Sonoff.
 
-Given that this 'just works' setup was based on docker, and I wanted to move it to a docker container in TrueNAS it should be easy right? To my surprise it actually was.
+Given that this 'just works' setup was based on Docker, and I wanted to move it to a Docker container in TrueNAS it should be easy right? To my surprise it actually was.
 
 ### Installation on TrueNAS
 
@@ -78,38 +77,19 @@ After digging around in the terminal for a while I went back into the Home Assis
 ## Tandoor
 
 I had installed Tandoor using Docker Compose on the old server.
-The old compose file can be seen below.
-
-**INSERT COMPOSE FILE FROM SERVER**
-
 TrueNAS doesn't directly support Tandoor,
 and for now I don't want to install community supported apps.
 
-Researching self-hosted recipe software can bewildering,
-but I ended up using **INSERT LINK** Mealie instead.
+Researching self-hosted recipe software can be bewildering,
+but I ended up using [Mealie](https://mealie.io/) instead.
 
-### Easy migration, and PWA instaed of 3rd party app
+### Easy migration, and PWA instead of 3rd party app
 
 Migrating from Tandoor to Mealie is rather easy and intuitive,
 and installing the PWA is just as easy.
-
-**INSERT NOTE ABOUT PWA EU AND APPLE**
+Good thing [Apple reversed their decision about PWAs in the EU](https://techcrunch.com/2024/03/01/apple-reverses-decision-about-blocking-web-apps-on-iphones-in-the-eu/).
 
 ## Nextcloud
 ...
 
 I haven't migrated Nextcloud yet.
-The old installation was done through Snap (because I didn't know better)
-and uses MySQL (**VERIFY**) under the hood. The new installation has to be done
-int PostgreSQL, because that's what Nextcloud on TrueNAS supports.
-While I can make a DB dump in the old installation, 
-and try to convert it to something which works with PostgreSQL,
-I don't want to.
-
-I might end up having my users download their content and reupload it to the new instance,
-but that won't carry over the shares, which is a big minus.
-The migration of Nextcloud is a can I will kick way further down the road.
-
-## Setting Nextcloud up on TrueNAS
-
-I did set up Nextcloud on my new server **BLOG POST**
