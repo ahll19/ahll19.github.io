@@ -7,7 +7,7 @@ tags: [home server, nextcloud, tandoor mealie, migration, truenas]
 image: posts/2025-04-13/migration-3020862114.jpg
 ---
 
-some intro
+After running several self-hosted services on an aging Acer desktop, I finally decided it was time to consolidate everything onto a new, more capable server. This post walks through my experience migrating Home Assistant, Tandoor (with a switch to Mealie), and eventually Nextcloud to the new setup—now powered by TrueNAS and Docker. Along the way, I hit a few snags but also found some pleasant surprises. Here's how it all went.
 
 - [Why Migrate](#why-migrate)
   - [Home Assistant](#home-assistant)
