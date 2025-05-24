@@ -1,0 +1,17 @@
+{
+    "name": "ahll-jekyll-container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "anders",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    "postStartCommand": "/workspace/.devcontainer/start.sh",
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    ],
+    "forwardPorts": [
+        4000,
+        35729
+    ]
+}
