@@ -13,5 +13,12 @@
     "forwardPorts": [
         4000,
         35729
-    ]
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    }
 }
